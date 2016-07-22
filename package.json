@@ -1,5 +1,5 @@
 {
-  "name": "d3-rebind",
+  "name": "@zambezi/d3-rebind",
   "version": "3.5.17",
   "description": "Copies a variable number of methods from source to target.",
   "keywords": [
