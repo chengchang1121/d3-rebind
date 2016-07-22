@@ -1,0 +1,28 @@
+{
+  "name": "d3-rebind",
+  "version": "3.5.17",
+  "description": "Copies a variable number of methods from source to target.",
+  "keywords": [
+    "d3",
+    "d3-module"
+  ],
+  "license": "BSD-3-Clause",
+  "main": "build/d3-rebind.js",
+  "jsnext:main": "index",
+  "homepage": "https://github.com/zambezi/d3-rebind",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zambezi/d3-rebind.git"
+  },
+  "scripts": {
+    "pretest": "rm -rf build && mkdir build && rollup -f umd -n d3 -o build/d3-rebind.js -- index.js",
+    "test": "tape 'test/**/*-test.js'",
+    "prepublish": "npm run test && uglifyjs build/d3-rebind.js -c -m -o build/d3-rebind.min.js",
+    "postpublish": "zip -j build/d3-rebind.zip -- LICENSE README.md build/d3-rebind.js build/d3-rebind.min.js"
+  },
+  "devDependencies": {
+    "rollup": "0.27",
+    "tape": "4",
+    "uglify-js": "2"
+  }
+}
